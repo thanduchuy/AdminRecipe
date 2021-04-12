@@ -35,3 +35,8 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+
+function logout() {
+  sessionStorage.clear();
+  location.reload();
+}

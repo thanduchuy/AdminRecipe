@@ -1,4 +1,13 @@
 function loadPage() {
+  let session = sessionStorage.getItem('user');
+
+  let url = window.location.href;
+  let indexSplash = url.lastIndexOf('/');
+  let newUrl = '';
+  if (session == null) {
+    newUrl = url.slice(0, indexSplash) + '/login.html';
+    window.location.href = newUrl;
+  }
   eventAdd();
 }
 
