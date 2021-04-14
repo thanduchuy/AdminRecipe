@@ -12,26 +12,6 @@ function loadPage() {
   eventAdd();
 }
 
-function addOrder() {
-  firebase
-    .database()
-    .ref('Order')
-    .push()
-    .set(
-      new Order(
-        'Huy',
-        '0387771904',
-        'K23/Nguyen Phuoc Chu',
-        'PanCake',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDbmFtV1RzagO2SLoc0lUeOfmoNz5ltj00vQ&usqp=CAU',
-        213,
-        2,
-        426,
-        'Unapproved'
-      )
-    );
-}
-
 function eventAdd() {
   firebase
     .database()
@@ -70,7 +50,8 @@ function changeStatus(event) {
         row[6].innerHTML.substring(1),
         row[7].innerHTML,
         row[8].innerHTML.substring(1),
-        'Progress'
+        'Progress',
+        row[9].innerHTML
       )
     );
   event.target.parentNode.parentNode.remove();
@@ -90,6 +71,7 @@ function convertData(element) {
                 <td class="text-right">$${element.priceFood}</td>
                 <td>${element.amount}</td>
                 <td class="text-right">$${element.total}</td>
+                <td class="text-right" hidden>$${element.idDevice}</td>
                  <td class="text-right">
                  <button type="button" class="btn btn-secondary" onclick="changeStatus(event)">${element.status}</button>
                  </td>

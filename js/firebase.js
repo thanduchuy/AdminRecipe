@@ -8,7 +8,8 @@ class Order {
     priceFood,
     amount,
     total,
-    status
+    status,
+    idDevice
   ) {
     this.nameUser = nameUser;
     this.phone = phone;
@@ -19,6 +20,7 @@ class Order {
     this.amount = amount;
     this.total = total;
     this.status = status;
+    this.idDevice = idDevice;
   }
 }
 

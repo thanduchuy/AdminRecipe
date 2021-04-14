@@ -38,6 +38,7 @@ function convertData(element) {
                 <td class="text-right">$${element.priceFood}</td>
                 <td>${element.amount}</td>
                 <td class="text-right">$${element.total}</td>
+                <td class="text-right" hidden>$${element.idDevice}</td>
                  <td class="text-right">
                  <button type="button" class="btn btn-secondary" onclick="changeStatus(event)">${element.status}</button>
                  </td>
@@ -60,7 +61,8 @@ function changeStatus(event) {
         row[6].innerHTML.substring(1),
         row[7].innerHTML,
         row[8].innerHTML.substring(1),
-        'Complete'
+        'Complete',
+        row[9].innerHTML
       )
     );
   event.target.parentNode.parentNode.remove();
