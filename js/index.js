@@ -71,7 +71,7 @@ function convertData(element) {
                 <td class="text-right">$${element.priceFood}</td>
                 <td>${element.amount}</td>
                 <td class="text-right">$${element.total}</td>
-                <td class="text-right" hidden>$${element.idDevice}</td>
+                <td class="text-right" hidden>${element.idDevice}</td>
                  <td class="text-right">
                  <button type="button" class="btn btn-secondary" onclick="changeStatus(event)">${element.status}</button>
                  </td>
